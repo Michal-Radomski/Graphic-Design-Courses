@@ -18,3 +18,15 @@ body {
   height: 200px;
   border: 1px solid green;
 }
+
+.div-img2 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid blue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("favicon.svg");
+}
+.div-img2 p {
+  font-weight: bold;
+}
