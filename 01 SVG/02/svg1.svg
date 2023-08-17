@@ -1,0 +1,14 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="group1">
+      <circle id="circle1" cx="250" cy="250" r="150" fill="blue" />
+      <circle id="circle2" cx="250" cy="250" r="100" fill="yellow" />
+    </g>
+    <circle id="circle3" cx="250" cy="250" r="50" fill="red" />
+  </defs>
+
+  <!-- <use href="#circle1" />
+  <use href="#circle2" /> -->
+  <use href="#group1" />
+  <use href="#circle3" />
+</svg>
