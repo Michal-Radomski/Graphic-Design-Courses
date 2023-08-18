@@ -30,3 +30,7 @@ body {
 .div-img2 p {
   font-weight: bold;
 }
+
+circle#css-circle {
+  fill: darkred;
+}

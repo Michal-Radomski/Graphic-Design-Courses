@@ -1,0 +1,10 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    circle.circle {
+      fill: darkviolet;
+    }
+  </style>
+  <circle cx="250" cy="250" r="150" style="fill: green" />
+  <circle cx="250" cy="250" r="100" class="circle" />
+  <circle cx="250" cy="250" r="50" fill="red" />
+</svg>
