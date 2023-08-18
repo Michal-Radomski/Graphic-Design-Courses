@@ -1,2 +1,5 @@
 *.svg linguist-detectable=true
 *.svg linguist-language=svg
+
+*.xml linguist-detectable=true
+*.xml linguist-language=xml
