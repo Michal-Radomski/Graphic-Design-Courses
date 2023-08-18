@@ -16,5 +16,13 @@
     <windSpeed unit="kph">40</windSpeed>
     <danger>true</danger>
   </dailyForecast>
+  <dailyForecast>
+    <date>2015-06-03</date>
+    <description>windy</description>
+    <maxTemp unit="C">24</maxTemp>
+    <minTemp unit="C">21</minTemp>
+    <windSpeed unit="kph">10</windSpeed>
+    <danger>false</danger>
+  </dailyForecast>
   <dailyForecast />
 </forecast>
