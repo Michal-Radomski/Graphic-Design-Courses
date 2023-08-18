@@ -1,2 +1,2 @@
-*.svg linguist-language=SVG
-*.svg linguist-language=true
+*.svg linguist-detectable=true
+*.svg linguist-language=svg
