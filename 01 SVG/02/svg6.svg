@@ -16,7 +16,7 @@
   <text x="40" y="35" class="heavy">cat</text>
   <text x="55" y="55" class="small">
     is
-    <tspan rotate="10,20,30,40" style="fill: darkmagenta; font-size: 200%">very</tspan>
+    <tspan rotate="10,20,30,40" style="fill: darkmagenta; font-size: 200%" dy="30%">very</tspan>
   </text>
   <text x="65" y="55" class="Rrrrr">Grumpy!</text>
 </svg>
