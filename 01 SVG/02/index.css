@@ -34,3 +34,17 @@ body {
 circle#css-circle {
   fill: darkred;
 }
+
+/* //* SVG animation with CSS */
+rect#svg-rect {
+  animation: fadeIn 2s ease-in infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
