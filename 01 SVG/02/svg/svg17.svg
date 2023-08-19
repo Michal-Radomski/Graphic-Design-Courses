@@ -6,6 +6,6 @@
   </circle>
 
   <rect width="50" height="50" x="50" y="100" fill="#0600BC">
-    <animate attributeName="rx" values="0;5;0" dur="10s" repeatCount="indefinite" />
+    <animate attributeName="rx" values="0;50;0" dur="5s" repeatCount="indefinite" />
   </rect>
 </svg>

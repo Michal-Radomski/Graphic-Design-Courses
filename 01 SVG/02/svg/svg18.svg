@@ -36,6 +36,6 @@
 
   <!-- //^ animate -->
   <rect width="100" height="100" x="200" y="180" fill="green">
-    <animate attributeName="rx" values="0;20;0" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="rx" values="0;25;0" dur="4s" repeatCount="indefinite" />
   </rect>
 </svg>
