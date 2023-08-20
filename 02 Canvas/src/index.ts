@@ -39,4 +39,27 @@ if (myCanvas.getContext("2d")) {
 
   ctx.rect(20, 300, 150, 100);
   ctx.fill();
+
+  ctx.beginPath();
+  ctx.strokeStyle = "blue";
+  ctx.moveTo(220, 20);
+  ctx.lineTo(400, 20);
+  ctx.lineWidth = 3;
+  ctx.stroke();
+
+  // Second path
+  ctx.beginPath();
+  ctx.strokeStyle = "green";
+  ctx.moveTo(220, 20);
+  ctx.lineTo(320, 120);
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Third path
+  ctx.beginPath();
+  ctx.strokeStyle = "yellow";
+  ctx.moveTo(320, 120);
+  ctx.lineTo(400, 20);
+  ctx.lineWidth = 2;
+  ctx.stroke();
 }
