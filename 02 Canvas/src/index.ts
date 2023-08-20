@@ -23,6 +23,7 @@ if (myCanvas.getContext("2d")) {
   ctx.strokeStyle = "red";
   ctx.lineWidth = 5;
 
+  //* Rectangle
   ctx.fillRect(20, 20, 150, 100);
   ctx.strokeRect(20, 20, 150, 100);
 
@@ -40,6 +41,7 @@ if (myCanvas.getContext("2d")) {
   ctx.rect(20, 300, 150, 100);
   ctx.fill();
 
+  //* Line
   ctx.beginPath();
   ctx.strokeStyle = "blue";
   ctx.moveTo(220, 20);
@@ -55,11 +57,30 @@ if (myCanvas.getContext("2d")) {
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  // Third path
+  // Third and fourth path
   ctx.beginPath();
-  ctx.strokeStyle = "yellow";
+  ctx.strokeStyle = "orange";
   ctx.moveTo(320, 120);
   ctx.lineTo(400, 20);
+  ctx.lineTo(500, 120);
   ctx.lineWidth = 2;
+  // ctx.fillStyle = "black";
+  // ctx.fill();
   ctx.stroke();
+
+  //* Circle
+  ctx.beginPath();
+  ctx.strokeStyle = "orangered";
+  ctx.lineWidth = 3;
+  ctx.arc(250, 200, 50, 0, 2 * Math.PI);
+  ctx.stroke();
+
+  //* Arc
+  ctx.beginPath();
+  ctx.strokeStyle = "darkred";
+  ctx.lineWidth = 3;
+  ctx.arc(250, 300, 50, 0, 1 * Math.PI);
+  ctx.stroke();
+} else {
+  console.log("!myCanvas.getContext('2d')");
 }
