@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <clipPath id="cut-off-bottom">
+      <rect x="0" y="0" width="200" height="100" opacity="0.5" />
+    </clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="100" clip-path="url(#cut-off-bottom)" fill="red" />
+
+  <rect x="0" y="0" width="200" height="100" opacity="0.1" fill="maroon" />
+  <circle cx="100" cy="100" r="100" opacity="0.1" fill="green" />
+</svg>
