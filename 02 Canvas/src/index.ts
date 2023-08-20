@@ -77,9 +77,24 @@ if (myCanvas.getContext("2d")) {
 
   //* Arc
   ctx.beginPath();
-  ctx.strokeStyle = "darkred";
+  ctx.fillStyle = "darkred";
   ctx.lineWidth = 3;
   ctx.arc(250, 300, 50, 0, 1 * Math.PI);
+  ctx.fill();
+
+  //* BezierCurve
+  ctx.beginPath();
+  ctx.strokeStyle = "darkviolet";
+  ctx.moveTo(250, 400);
+  ctx.bezierCurveTo(250, 500, 400, 500, 400, 120);
+  ctx.stroke();
+
+  //* quadratic BezierCurve
+  ctx.beginPath();
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = "magenta";
+  ctx.moveTo(20, 520);
+  ctx.quadraticCurveTo(20, 600, 200, 520);
   ctx.stroke();
 } else {
   console.log("!myCanvas.getContext('2d')");
