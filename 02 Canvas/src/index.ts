@@ -25,4 +25,18 @@ if (myCanvas.getContext("2d")) {
 
   ctx.fillRect(20, 20, 150, 100);
   ctx.strokeRect(20, 20, 150, 100);
+
+  ctx.clearRect(30, 30, 130, 80);
+
+  // Shadow
+  ctx.shadowColor = "dimgray";
+  ctx.shadowBlur = 10;
+  ctx.shadowOffsetX = 20;
+  ctx.shadowOffsetY = 20;
+
+  // Filled rectangle
+  ctx.fillRect(20, 150, 100, 100);
+
+  ctx.rect(20, 300, 150, 100);
+  ctx.fill();
 }
