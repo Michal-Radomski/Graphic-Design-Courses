@@ -96,6 +96,15 @@ if (myCanvas.getContext("2d")) {
   ctx.moveTo(20, 520);
   ctx.quadraticCurveTo(20, 600, 200, 520);
   ctx.stroke();
+
+  //* BezierCurve in a for loop
+  for (let i = 0; i < 10; i++) {
+    ctx.beginPath();
+    ctx.lineWidth = i + 1;
+    ctx.strokeStyle = `rgba(${15 * i}, ${15 * i}, ${15 * i}, ${1 - 0.05 * i})`;
+    ctx.bezierCurveTo(250 + 10 * i, 500 + 10 * i, 400 + 10 * i, 500 + 10 * i, 400 + 10 * i, 120 + 10 * i);
+    ctx.stroke();
+  }
 } else {
   console.log("!myCanvas.getContext('2d')");
 }
