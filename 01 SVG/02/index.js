@@ -26,3 +26,7 @@ svg.appendChild(circle);
 
 // console.log("svg:", svg);
 // console.log("svgJs:", svgJs);
+
+setTimeout(() => {
+  circle.setAttribute("fill", "green");
+}, 1000);
