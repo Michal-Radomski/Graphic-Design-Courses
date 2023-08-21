@@ -16,6 +16,20 @@ const myCanvas = document.querySelector("#myCanvas") as HTMLCanvasElement;
 //   getMousePosition(myCanvas, event);
 // });
 
+//* A utility function to draw a rectangle with rounded corners.
+function roundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, radius: number) {
+  ctx.strokeStyle = "maroon";
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.moveTo(x, y + radius);
+  ctx.arcTo(x, y + height, x + radius, y + height, radius);
+  ctx.arcTo(x + width, y + height, x + width, y + height - radius, radius);
+  ctx.arcTo(x + width, y, x + width - radius, y, radius);
+  ctx.arcTo(x, y, x, y + radius, radius);
+  ctx.stroke();
+  ctx.closePath();
+}
+
 if (myCanvas.getContext("2d")) {
   const ctx = myCanvas.getContext("2d") as CanvasRenderingContext2D;
   // console.log("ctx: ", ctx);
@@ -114,6 +128,9 @@ if (myCanvas.getContext("2d")) {
     ctx.stroke();
     ctx.closePath();
   }
+
+  //* roundedRect - function
+  roundedRect(ctx, 480, 420, 150, 150, 15);
 } else {
   console.log("!myCanvas.getContext('2d')");
 }
@@ -142,6 +159,7 @@ if (canvas.getContext) {
   ctx.fillStyle = "#FFFFFF";
   ctx.fillRect(250, 172, 50, 50);
   ctx.fillRect(310, 172, 50, 50);
+  ctx.closePath();
 
   // Eyes
   ctx.beginPath();
@@ -154,5 +172,38 @@ if (canvas.getContext) {
   ctx.arc(365, 90, 30, 0, 2 * Math.PI);
   ctx.fillStyle = "#333333";
   ctx.fill();
+  ctx.closePath();
+
+  //* Path2D
+  ctx.fillStyle = "crimson";
+  ctx.strokeStyle = "chocolate";
+  ctx.globalAlpha = 0.5;
+
+  const customPath = new Path2D("M10 10 h 80 v 80 h -80 Z") as Path2D;
+  ctx.stroke(customPath);
+
+  const rectangle = new Path2D() as Path2D;
+  rectangle.rect(10, 120, 50, 50);
+
+  const circle = new Path2D() as Path2D;
+  circle.arc(50, 220, 25, 0, 2 * Math.PI);
+
+  ctx.stroke(rectangle);
+  ctx.fill(circle);
+
+  //* Draw the ellipse
+  ctx.strokeStyle = "coral";
+  ctx.globalAlpha = 1;
+  ctx.beginPath();
+  ctx.ellipse(100, 300, 50, 75, Math.PI / 4, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+
+  //* Draw the ellipse's line of reflection
+  ctx.beginPath();
+  ctx.setLineDash([5, 5]);
+  ctx.moveTo(0, 400);
+  ctx.lineTo(400, 0);
+  ctx.stroke();
   ctx.closePath();
 }
