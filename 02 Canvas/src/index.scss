@@ -14,7 +14,13 @@ body {
   background-color: whitesmoke !important;
 }
 
+//* Canvas
 canvas {
   border: 1px solid blue;
-  background-color: azure;
+  &#myCanvas {
+    background-color: azure;
+  }
+  &#myCan {
+    background-color: lightpink;
+  }
 }
