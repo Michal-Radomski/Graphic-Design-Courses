@@ -212,5 +212,14 @@ if (canvas_2.getContext) {
 const canvas_3 = document.getElementById("myCan_3") as HTMLCanvasElement;
 if (canvas_3.getContext) {
   const ctx = canvas_3.getContext("2d") as CanvasRenderingContext2D;
-  console.log("ctx:", ctx);
+  // console.log("ctx:", ctx)
+  for (let i = 0; i < 10; i++) {
+    ctx.fillStyle = "rgb(" + Math.ceil(i * 20) + ",0,0)";
+    ctx.fillRect(25 + i * 30, 25, 30, 30);
+  }
+
+  for (let i = 0; i < 10; i++) {
+    ctx.fillStyle = "rgba(0," + Math.ceil(i * 20) + ",0," + (i + 1) / 10 + ")";
+    ctx.fillRect(25 + i * 30, 55, 30, 30);
+  }
 }
