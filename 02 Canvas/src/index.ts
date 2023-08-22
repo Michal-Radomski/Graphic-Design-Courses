@@ -206,6 +206,11 @@ if (canvas_2.getContext) {
   ctx.lineTo(400, 0);
   ctx.stroke();
   ctx.closePath();
+
+  for (let i = 0; i < 10; i++) {
+    ctx.fillStyle = "rgba(0," + "0," + Math.ceil(20 + i * 20) + "," + (i + 1) / 10 + ")";
+    ctx.fillRect(25 + i * 30, 455, 30, 30);
+  }
 }
 
 //^ Canvas3
