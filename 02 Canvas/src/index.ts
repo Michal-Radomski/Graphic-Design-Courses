@@ -1,8 +1,8 @@
 // console.log("test");
 
 //^ Canvas 1
-const myCanvas = document.querySelector("#myCanvas") as HTMLCanvasElement;
-// console.log("myCanvas:", myCanvas);
+const myCanvas_1 = document.querySelector("#myCanvas_1") as HTMLCanvasElement;
+// console.log("myCanvas_1:", myCanvas_1);
 
 // function getMousePosition(canvas: HTMLCanvasElement, event: MouseEvent): void {
 //   let rect = canvas.getBoundingClientRect();
@@ -12,8 +12,8 @@ const myCanvas = document.querySelector("#myCanvas") as HTMLCanvasElement;
 //   console.log("Coordinate x: " + x, "Coordinate y: " + y);
 // }
 
-// myCanvas.addEventListener("mousedown", function (event: MouseEvent) {
-//   getMousePosition(myCanvas, event);
+// myCanvas_1.addEventListener("mousedown", function (event: MouseEvent) {
+//   getMousePosition(myCanvas_1, event);
 // });
 
 //* A utility function to draw a rectangle with rounded corners.
@@ -30,8 +30,8 @@ function roundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, width:
   ctx.closePath();
 }
 
-if (myCanvas.getContext("2d")) {
-  const ctx = myCanvas.getContext("2d") as CanvasRenderingContext2D;
+if (myCanvas_1.getContext("2d")) {
+  const ctx = myCanvas_1.getContext("2d") as CanvasRenderingContext2D;
   // console.log("ctx: ", ctx);
 
   ctx.fillStyle = "green";
@@ -132,13 +132,13 @@ if (myCanvas.getContext("2d")) {
   //* roundedRect - function
   roundedRect(ctx, 480, 420, 150, 150, 15);
 } else {
-  console.log("!myCanvas.getContext('2d')");
+  console.log("!myCanvas_1.getContext('2d')");
 }
 
 //^ Canvas 2
-const canvas = document.getElementById("myCan") as HTMLCanvasElement;
-if (canvas.getContext) {
-  const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+const canvas_2 = document.getElementById("myCan_2") as HTMLCanvasElement;
+if (canvas_2.getContext) {
+  const ctx = canvas_2.getContext("2d") as CanvasRenderingContext2D;
 
   ctx.beginPath();
   ctx.fill();
@@ -206,4 +206,11 @@ if (canvas.getContext) {
   ctx.lineTo(400, 0);
   ctx.stroke();
   ctx.closePath();
+}
+
+//^ Canvas3
+const canvas_3 = document.getElementById("myCan_3") as HTMLCanvasElement;
+if (canvas_3.getContext) {
+  const ctx = canvas_3.getContext("2d") as CanvasRenderingContext2D;
+  console.log("ctx:", ctx);
 }
