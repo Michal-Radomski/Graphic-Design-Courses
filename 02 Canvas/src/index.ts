@@ -227,4 +227,20 @@ if (canvas_3.getContext) {
     ctx.fillStyle = "rgba(0," + Math.ceil(i * 20) + ",0," + (i + 1) / 10 + ")";
     ctx.fillRect(25 + i * 30, 55, 30, 30);
   }
+
+  for (let i = 0; i < 10; i++) {
+    ctx.fillStyle = "rgba(0," + Math.ceil(i * 20) + ",0,1)";
+    ctx.fillRect(25 + i * 30, 85, 30, 30);
+  }
+
+  for (let i = 0; i < 10; i++) {
+    ctx.lineWidth = 1 + i;
+    ctx.strokeStyle = "rgb(" + Math.ceil(i * 20) + ",0,0)";
+    ctx.lineCap = "square";
+
+    ctx.beginPath();
+    ctx.moveTo(50 + i * 20, 120);
+    ctx.lineTo(50 + i * 20, 220);
+    ctx.stroke();
+  }
 }
