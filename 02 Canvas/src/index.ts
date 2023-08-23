@@ -251,4 +251,12 @@ if (canvas_3.getContext) {
   ctx.rect(50, 300, 200, 100);
   ctx.stroke();
   ctx.closePath();
+
+  //* Linear gradient - Gradient coordinates are global
+  let linearGrade = ctx.createLinearGradient(300, 200, 600, 300);
+  linearGrade.addColorStop(0, "blue");
+  linearGrade.addColorStop(0.5, "yellow");
+  linearGrade.addColorStop(1, "red");
+  ctx.fillStyle = linearGrade;
+  ctx.fillRect(300, 200, 300, 100);
 }
