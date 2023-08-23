@@ -253,10 +253,18 @@ if (canvas_3.getContext) {
   ctx.closePath();
 
   //* Linear gradient - Gradient coordinates are global
-  let linearGrade = ctx.createLinearGradient(300, 200, 600, 300);
+  const linearGrade = ctx.createLinearGradient(300, 200, 600, 300);
   linearGrade.addColorStop(0, "blue");
   linearGrade.addColorStop(0.5, "yellow");
   linearGrade.addColorStop(1, "red");
   ctx.fillStyle = linearGrade;
   ctx.fillRect(300, 200, 300, 100);
+
+  //* Radial gradient - Gradient coordinates are global
+  const radialGrade = ctx.createRadialGradient(400, 450, 50, 420, 470, 100);
+  radialGrade.addColorStop(0, "red");
+  radialGrade.addColorStop(0.5, "yellow");
+  radialGrade.addColorStop(1, "blue");
+  ctx.fillStyle = radialGrade;
+  ctx.fillRect(300, 400, 200, 100);
 }
