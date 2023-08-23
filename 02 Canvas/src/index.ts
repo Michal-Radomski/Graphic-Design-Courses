@@ -234,7 +234,9 @@ if (canvas_3.getContext) {
   for (let i = 0; i < 10; i++) {
     ctx.lineWidth = 1 + i;
     ctx.strokeStyle = "rgb(" + Math.ceil(i * 20) + ",0, 0)";
-    ctx.lineCap = "square";
+    // ctx.lineCap = "square";
+    // ctx.lineCap = "round";
+    ctx.lineCap = "butt";
 
     ctx.beginPath();
     ctx.moveTo(50 + i * 20, 120);
@@ -242,4 +244,11 @@ if (canvas_3.getContext) {
     ctx.stroke();
     ctx.closePath();
   }
+
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.setLineDash([15, 5]);
+  ctx.rect(50, 300, 200, 100);
+  ctx.stroke();
+  ctx.closePath();
 }
