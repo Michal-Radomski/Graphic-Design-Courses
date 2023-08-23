@@ -278,3 +278,15 @@ if (canvas_3.getContext) {
   ctx.fillStyle = conicGradient;
   ctx.fillRect(50, 420, 200, 160);
 }
+
+//^ Canvas4
+const canvas_4 = document.getElementById("myCan_4") as HTMLCanvasElement;
+if (canvas_4.getContext) {
+  const ctx = canvas_4.getContext("2d") as CanvasRenderingContext2D;
+  // console.log("ctx:", ctx);
+  ctx.fillStyle = "blue";
+  ctx.font = "48px serif";
+  const myText = "Hello World!";
+  ctx.fillText(myText, 50, 50, 400);
+  ctx.strokeText(myText, 50, 100, 400);
+}
