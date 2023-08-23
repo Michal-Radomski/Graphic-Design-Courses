@@ -284,10 +284,20 @@ const canvas_4 = document.getElementById("myCan_4") as HTMLCanvasElement;
 if (canvas_4.getContext) {
   const ctx = canvas_4.getContext("2d") as CanvasRenderingContext2D;
   // console.log("ctx:", ctx);
-  ctx.fillStyle = "blue";
-  ctx.font = "italic bold 48px Arial";
-  const myText = "Hello World!";
-  // ctx.textAlign = "center";
-  ctx.fillText(myText, 50, 50, 400);
-  ctx.strokeText(myText, 50, 100, 400);
+
+  const img = new Image();
+  // console.log("img:", img);
+  img.onload = () => {
+    // console.log("img loaded");
+    ctx.drawImage(img, 0, 0);
+
+    ctx.fillStyle = "blue";
+    ctx.font = "italic bold 48px Arial";
+    const myText = "Hello World!";
+    // ctx.textAlign = "center";
+    ctx.fillText(myText, 350, 50, 400);
+    ctx.strokeText(myText, 350, 100, 400);
+  };
+  img.src = "img.png";
+  console.log("img:", img);
 }
