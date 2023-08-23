@@ -267,4 +267,14 @@ if (canvas_3.getContext) {
   radialGrade.addColorStop(1, "blue");
   ctx.fillStyle = radialGrade;
   ctx.fillRect(300, 400, 200, 100);
+
+  //* Conic gradient - Gradient coordinates are global
+  const conicGradient = ctx.createConicGradient(0, 150, 500);
+  conicGradient.addColorStop(0, "red");
+  conicGradient.addColorStop(0.25, "orange");
+  conicGradient.addColorStop(0.5, "yellow");
+  conicGradient.addColorStop(0.75, "green");
+  conicGradient.addColorStop(1, "blue");
+  ctx.fillStyle = conicGradient;
+  ctx.fillRect(50, 420, 200, 160);
 }
