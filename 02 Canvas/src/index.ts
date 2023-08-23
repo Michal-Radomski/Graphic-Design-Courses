@@ -285,8 +285,9 @@ if (canvas_4.getContext) {
   const ctx = canvas_4.getContext("2d") as CanvasRenderingContext2D;
   // console.log("ctx:", ctx);
   ctx.fillStyle = "blue";
-  ctx.font = "48px serif";
+  ctx.font = "italic bold 48px Arial";
   const myText = "Hello World!";
+  // ctx.textAlign = "center";
   ctx.fillText(myText, 50, 50, 400);
   ctx.strokeText(myText, 50, 100, 400);
 }
