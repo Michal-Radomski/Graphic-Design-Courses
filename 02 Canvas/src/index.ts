@@ -298,6 +298,6 @@ if (canvas_4.getContext) {
     ctx.fillText(myText, 350, 50, 400);
     ctx.strokeText(myText, 350, 100, 400);
   };
-  img.src = "img.png";
-  console.log("img:", img);
+  img.src = "img/img.png";
+  // console.log("img:", img);
 }

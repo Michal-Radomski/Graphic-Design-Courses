@@ -23,12 +23,20 @@ const files = {
   tsPath: "src/**/*.ts",
   htmlPath: "src/index.html",
   favIcon: "src/favicon.svg",
+  images: "src/img/**/*",
 };
 
 function htmlTask() {
   return src([files.htmlPath, files.favIcon])
     .pipe(gulpCopy("dist", { prefix: 1 }))
     .pipe(dest("dist"))
+    .pipe(browserSync.stream());
+}
+
+function imgTask() {
+  return src(files.images)
+    .pipe(gulpCopy("dist", { prefix: 1 }))
+    .pipe(dest("dist/img"))
     .pipe(browserSync.stream());
 }
 
@@ -78,6 +86,7 @@ function browser_Sync() {
 // Watch files
 function watchFiles() {
   watch(files.htmlPath, htmlTask);
+  watch(files.images, imgTask);
   watch(files.sassPath, sassTask);
   watch(files.tsPath, tsTask);
   watch(files.htmlPath).on("change", browserSync.reload);
