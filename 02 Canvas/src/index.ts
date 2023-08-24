@@ -301,3 +301,15 @@ if (canvas_4.getContext) {
   img.src = "img/img.png";
   // console.log("img:", img);
 }
+
+//^ Canvas5
+window.onload = function () {
+  const canvas_5 = document.getElementById("myCan_5") as HTMLCanvasElement;
+  if (canvas_5.getContext) {
+    const ctx = canvas_5.getContext("2d") as CanvasRenderingContext2D;
+    // console.log("ctx:", ctx);
+    const newImage = document.getElementById("newImage") as HTMLImageElement;
+    // console.log("newImage:", newImage);
+    ctx.drawImage(newImage, 0, 0);
+  }
+};
