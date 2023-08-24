@@ -289,7 +289,7 @@ if (canvas_4.getContext) {
   // console.log("img:", img);
   img.onload = () => {
     // console.log("img loaded");
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0, 550, 550);
 
     ctx.fillStyle = "blue";
     ctx.font = "italic bold 48px Arial";
@@ -310,6 +310,9 @@ window.onload = function () {
     // console.log("ctx:", ctx);
     const newImage = document.getElementById("newImage") as HTMLImageElement;
     // console.log("newImage:", newImage);
-    ctx.drawImage(newImage, 0, 0);
+    ctx.drawImage(newImage, 0, 0, 250, 250);
+
+    //* Slicing images
+    ctx.drawImage(newImage, 0, 0, 250, 250, 10, 300, 250, 250);
   }
 };
