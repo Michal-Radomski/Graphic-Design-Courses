@@ -340,5 +340,35 @@ window.onload = function () {
     // Restore to the state saved by the most recent call to save()
     ctx.restore();
     ctx.fillRect(150, 440, 100, 100);
+
+    // Save the current state
+    ctx.save();
+    ctx.scale(0.3, 0.3);
+    ctx.fillStyle = "blue";
+    ctx.beginPath();
+    ctx.arc(120, 60, 50, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
+    // Restore to the state saved by the most recent call to save()
+    ctx.restore();
+
+    ctx.save();
+    ctx.translate(50, 50);
+    ctx.fillStyle = "yellow";
+    ctx.globalAlpha = 0.5;
+    ctx.beginPath();
+    ctx.arc(320, 160, 70, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(220, 260, 70, 0, 2 * Math.PI);
+    ctx.fill;
+    ctx.translate(50, 50);
+    ctx.rotate(75);
+    ctx.fillStyle = "red";
+    ctx.fillRect(20, 20, 200, 100);
+    ctx.closePath();
+    ctx.restore();
   }
 };
