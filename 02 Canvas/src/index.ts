@@ -370,5 +370,13 @@ window.onload = function () {
     ctx.fillRect(20, 20, 200, 100);
     ctx.closePath();
     ctx.restore();
+
+    let bgColor = 0;
+    for (let x = 0; x < 30; x++) {
+      bgColor = Math.floor((255 / 30) * x);
+      ctx.fillStyle = "rgb(" + bgColor + "," + bgColor + "," + bgColor + ")";
+      ctx.fillRect(300, 200, 200, 100);
+      ctx.setTransform(1, 0, 0, 1, x, x);
+    }
   }
 };
