@@ -424,4 +424,49 @@ window.onload = function () {
     ctx.fillStyle = "deeppink";
     ctx.fillRect(100, 400, 100, 100);
   }
+
+  //^ Canvas7
+  const canvas_7 = document.getElementById("myCan_7") as HTMLCanvasElement;
+  if (canvas_7.getContext) {
+    const ctx = canvas_7.getContext("2d") as CanvasRenderingContext2D;
+    // console.log("ctx:", ctx);
+
+    canvas_7.addEventListener("mousemove", clickDraw);
+    let canvasWidth = canvas_7.width;
+    let canvasHeight = canvas_7.height;
+    // console.log({ canvasWidth, canvasHeight });
+
+    let myx = 50;
+    let myy = 200;
+    let myr = 50;
+    let x = 300;
+    let y = 200;
+
+    function clickDraw(event: MouseEvent) {
+      // console.log({ event });
+      x = event!.clientX;
+      y = event!.clientY;
+      draw();
+    }
+
+    function draw() {
+      ctx.beginPath();
+      if (x < myx) {
+        myx = myx - 1;
+      } else {
+        myx = myx + 1;
+      }
+      if (y < myy) {
+        myy = myy - 1;
+      } else {
+        myy = myy + 1;
+      }
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+      ctx.fillStyle = "red";
+      ctx.arc(myx, myy, myr, 0, Math.PI * 2, false);
+      ctx.fill();
+      ctx.closePath();
+      window.requestAnimationFrame(draw);
+    }
+  }
 };
