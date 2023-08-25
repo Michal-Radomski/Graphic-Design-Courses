@@ -325,6 +325,31 @@ window.onload = function () {
         ctx.restore();
       }
     }
+
+    //* Transform and setTransform
+    const sin = Math.sin(Math.PI / 6);
+    const cos = Math.cos(Math.PI / 6);
+    ctx.translate(400, 400);
+    let c = 0;
+    for (let i = 0; i <= 12; i++) {
+      c = Math.floor((255 / 12) * i);
+      ctx.fillStyle = `rgb(${c}, ${c}, ${c})`;
+      ctx.fillRect(0, 0, 100, 10);
+      ctx.transform(cos, sin, -sin, cos, 0, 0);
+    }
+
+    //* Reset transformation matrix to the identity matrix -> ctx.resetTransform();
+    // Skewed rectangles
+    ctx.transform(1, 0, 1.7, 1, 0, 0);
+    ctx.fillStyle = "orange";
+    ctx.fillRect(40, 40, 50, 20);
+    ctx.fillRect(40, 70, 50, 20);
+
+    // Non-skewed rectangles
+    ctx.resetTransform();
+    ctx.fillStyle = "darkmagenta";
+    ctx.fillRect(40, 40, 50, 20);
+    ctx.fillRect(40, 90, 50, 20);
   }
 
   // //^ Canvas6
