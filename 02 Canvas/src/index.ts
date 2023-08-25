@@ -316,3 +316,13 @@ window.onload = function () {
     ctx.drawImage(newImage, 0, 0, 250, 250, 10, 300, 250, 250);
   }
 };
+
+//^ Canvas6
+window.onload = function () {
+  const canvas_6 = document.getElementById("myCan_6") as HTMLCanvasElement;
+  if (canvas_6.getContext) {
+    const ctx = canvas_6.getContext("2d") as CanvasRenderingContext2D;
+
+    //* Save and Restore
+  }
+};
