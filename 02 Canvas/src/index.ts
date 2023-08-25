@@ -302,8 +302,8 @@ if (canvas_4.getContext) {
   // console.log("img:", img);
 }
 
-//^ Canvas5
 window.onload = function () {
+  //^ Canvas5
   const canvas_5 = document.getElementById("myCan_5") as HTMLCanvasElement;
   if (canvas_5.getContext) {
     const ctx = canvas_5.getContext("2d") as CanvasRenderingContext2D;
@@ -315,14 +315,21 @@ window.onload = function () {
     //* Slicing images
     ctx.drawImage(newImage, 0, 0, 250, 250, 10, 300, 250, 250);
   }
-};
 
-//^ Canvas6
-window.onload = function () {
+  // //^ Canvas6
   const canvas_6 = document.getElementById("myCan_6") as HTMLCanvasElement;
   if (canvas_6.getContext) {
     const ctx = canvas_6.getContext("2d") as CanvasRenderingContext2D;
 
-    //* Save and Restore
+    //* Translate
+    // Moved square
+    ctx.translate(110, 30);
+    ctx.fillStyle = "orangered";
+    ctx.fillRect(50, 300, 80, 80);
+    // Reset current transformation matrix to the identity matrix
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    // Unmoved square
+    ctx.fillStyle = "dimgray";
+    ctx.fillRect(50, 300, 80, 80);
   }
 };
