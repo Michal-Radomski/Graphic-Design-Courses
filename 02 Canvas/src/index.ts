@@ -324,6 +324,8 @@ window.onload = function () {
     //* Translate
     // Moved square
     ctx.translate(110, 30);
+    ctx.scale(0.75, 0.75);
+    ctx.rotate(-(5 * Math.PI) / 180);
     ctx.fillStyle = "orangered";
     ctx.fillRect(50, 300, 80, 80);
     // Reset current transformation matrix to the identity matrix
@@ -378,5 +380,10 @@ window.onload = function () {
       ctx.fillRect(300, 200, 200, 100);
       ctx.setTransform(1, 0, 0, 1, x, x);
     }
+
+    //* setTransform
+    ctx.setTransform(1, 0.2, 0.8, 1, 0, 0);
+    ctx.fillStyle = "deeppink";
+    ctx.fillRect(100, 400, 100, 100);
   }
 };
