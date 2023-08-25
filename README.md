@@ -6,4 +6,4 @@ Files created during Udemy.com different graphic design courses:
 
 2. [HTML5 Canvas](https://www.udemy.com/course/learn-html5-canvas-for-beginners)
 
-<!-- 3. [Graphic Design Theory](https://www.udemy.com/course/graphic-design-theory-for-beginners-course) -->
+3. [Graphic Design Theory](https://www.udemy.com/course/graphic-design-theory-for-beginners-course)
