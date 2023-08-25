@@ -314,6 +314,17 @@ window.onload = function () {
 
     //* Slicing images
     ctx.drawImage(newImage, 0, 0, 250, 250, 10, 300, 250, 250);
+
+    //* Translate
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        ctx.save();
+        ctx.fillStyle = `rgb(${51 * i}, ${255 - 51 * i}, 255)`;
+        ctx.translate(300 + j * 50, 50 + i * 50);
+        ctx.fillRect(0, 0, 25, 25);
+        ctx.restore();
+      }
+    }
   }
 
   // //^ Canvas6
@@ -373,9 +384,11 @@ window.onload = function () {
     ctx.closePath();
     ctx.restore();
 
+    //* Custom transformation
     let bgColor = 0;
     for (let x = 0; x < 30; x++) {
       bgColor = Math.floor((255 / 30) * x);
+      // console.log({ bgColor });
       ctx.fillStyle = "rgb(" + bgColor + "," + bgColor + "," + bgColor + ")";
       ctx.fillRect(300, 200, 200, 100);
       ctx.setTransform(1, 0, 0, 1, x, x);
