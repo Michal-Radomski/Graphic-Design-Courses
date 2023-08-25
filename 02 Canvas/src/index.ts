@@ -331,5 +331,14 @@ window.onload = function () {
     // Unmoved square
     ctx.fillStyle = "dimgray";
     ctx.fillRect(50, 300, 80, 80);
+
+    // * Save and Restore
+    // Save the current state
+    ctx.save();
+    ctx.fillStyle = "green";
+    ctx.fillRect(10, 410, 100, 100);
+    // Restore to the state saved by the most recent call to save()
+    ctx.restore();
+    ctx.fillRect(150, 440, 100, 100);
   }
 };
