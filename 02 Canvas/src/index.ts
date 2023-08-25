@@ -425,7 +425,7 @@ window.onload = function () {
     ctx.fillRect(100, 400, 100, 100);
   }
 
-  //^ Canvas7
+  //^ Canvas7 -> animation
   const canvas_7 = document.getElementById("myCan_7") as HTMLCanvasElement;
   if (canvas_7.getContext) {
     const ctx = canvas_7.getContext("2d") as CanvasRenderingContext2D;
@@ -467,6 +467,7 @@ window.onload = function () {
       ctx.fill();
       ctx.closePath();
       window.requestAnimationFrame(draw);
+      // console.log("new Date().toLocaleTimeString():", new Date().toLocaleTimeString());
     }
   }
 };
