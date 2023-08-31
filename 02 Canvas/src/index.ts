@@ -471,3 +471,64 @@ window.onload = function () {
     }
   }
 };
+
+//^ Canvas8
+// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations
+const canvas_8 = document.getElementById("myCan_8") as HTMLCanvasElement;
+if (canvas_8.getContext) {
+  const ctx = canvas_8.getContext("2d") as CanvasRenderingContext2D;
+  // console.log("ctx:", ctx);
+
+  // Images
+  const sun = new Image();
+  const moon = new Image();
+  const earth = new Image();
+
+  function draw() {
+    ctx.globalCompositeOperation = "destination-over";
+    ctx.clearRect(0, 0, 1288, 300);
+
+    // Earth shadow
+    ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+    // Earth orbit
+    ctx.strokeStyle = "rgba(0, 153, 255, 0.4)";
+    ctx.lineWidth = 2;
+    ctx.save();
+    ctx.translate(150, 150);
+
+    // Earth
+    const time = new Date();
+    ctx.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
+    ctx.translate(105, 0);
+    // earth shadow
+    ctx.fillRect(0, -12, 40, 24);
+    ctx.drawImage(earth, -12, -12, 24, 24);
+
+    // Moon
+    ctx.save();
+    ctx.rotate(((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000) * time.getMilliseconds());
+    ctx.translate(0, 28.5);
+    ctx.drawImage(moon, -3.5, -3.5, 7, 7);
+    ctx.restore();
+
+    ctx.restore();
+
+    ctx.beginPath();
+    // Earth orbit
+    ctx.arc(150, 150, 105, 0, Math.PI * 2, false);
+    ctx.stroke();
+
+    // ctx.restore();
+    ctx.drawImage(sun, 130, 130, 40, 40);
+
+    window.requestAnimationFrame(draw);
+  }
+
+  //* Immediately Invoked Function Expression
+  (function init() {
+    sun.src = "./img/sun.jpg";
+    moon.src = "./img/moon.jpg";
+    earth.src = "./img/earth.jpg";
+    window.requestAnimationFrame(draw);
+  })();
+}
